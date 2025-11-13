@@ -1,2 +1,6 @@
 # Repo for shared programs across Arch and Debian
 
+- Do not use stow with qalculate or meteo-qt
+  - copy those two to the ~/.config folder
+- Everything else stow can be used with
+
