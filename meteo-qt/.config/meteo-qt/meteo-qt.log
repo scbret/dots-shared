@@ -1,0 +1,51 @@
+2025/11/12 19:43:04 ERROR: Your openweathermap key has no access to onecall api - 2801: meteo_qt
+2025/11/12 19:43:04 WARNING: The icon weather-clear-night for the openweathermap icon 01n doesn't exist in the system icons theme 'hicolor' - 2141: meteo_qt
+2025/11/12 19:43:04 WARNING: The icon weather-clear-night-symbolic for the openweathermap icon 01n doesn't exist in the system icons theme 'hicolor' - 2141: meteo_qt
+2025/11/12 19:43:04 INFO: 
+EXPORT_START
+City,Mason City, US
+Temperature,43.38 °F
+Feels like,37.27 °F
+Wind,West 11.5  mph  gentle breeze
+Cloudiness,0% clear sky
+Humidity,66 %
+Visibility,6.2 mi
+Comfort,Dry
+Precipitation,no  
+Sunrise,07:02
+Sunset,16:51
+Daylight,9:49
+Air quality,
+UV,
+EXPORT_END
+ - 822: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-many-clouds for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast-symbolic for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-clouds-night for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast-symbolic for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-clouds-night for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast-symbolic for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-clear for the openweathermap icon 01d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-clear-symbolic for the openweathermap icon 01d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-clouds-night for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast-symbolic for the openweathermap icon 03n doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-many-clouds for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:05 WARNING: The icon weather-overcast-symbolic for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-many-clouds for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-overcast for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-overcast-symbolic for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-clear for the openweathermap icon 01d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-clear-symbolic for the openweathermap icon 01d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-many-clouds for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-overcast for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-overcast-symbolic for the openweathermap icon 04d doesn't exist in the system icons theme 'hicolor' - 1563: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-clouds for the openweathermap icon 03d doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-overcast for the openweathermap icon 03d doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:06 WARNING: The icon weather-overcast-symbolic for the openweathermap icon 03d doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:07 WARNING: The icon weather-clear for the openweathermap icon 01d doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
+2025/11/12 19:43:07 WARNING: The icon weather-clear-symbolic for the openweathermap icon 01d doesn't exist in the system icons theme 'hicolor' - 1820: meteo_qt
