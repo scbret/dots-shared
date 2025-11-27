@@ -52,7 +52,9 @@ else
     # Only Laptop screen is on.
     # ---------------------------------------------------------
     xrandr --output eDP-1 --primary --mode 2048x1152 --pos 0x0 --rotate normal \
-           --output DP-2 --off 
+           --output DP-2 --off \
+           --output DP-1-8 --off \
+           --output DP-1-1 --off
 fi
 
 # 2. Force the pointer to reset to the standard 'left_ptr' arrow.
