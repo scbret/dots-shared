@@ -1,27 +1,28 @@
 #!/bin/bash
 
-# This function checks if wttr.in is available before the weather info is fetched
-ck_curl() {
-  curl -sf wttr.in >/dev/null
-}
+# --- Configuration ---
+OUT_FILE="/tmp/wttr"
+TEMP_FILE="/tmp/wttr_tmp"
+LOCATION="Mason+City"
 
-ck_curl
-if [ $? -eq 0 ]; then # $? means "output of the last command"
-  curl -s "wttr.in/mason+city?u&format=%m+%C,+H:%h,+A:%t,+F:%f,+W:%w\n" >/tmp/wttr
-  wttr_net=1
-else                                     # Non-zero output would appear both when the site \
-  for ((cntr = 0; cntr < 3; cntr++)); do #   is down and when you're physically offline
-    echo "Probing weather.  " >/tmp/wttr
-    sleep 0.5
-    echo "Probing weather.. " >/tmp/wttr
-    sleep 0.5
-    echo "Probing weather..." >/tmp/wttr
-    sleep 0.5 # A wee bit of animation
-  done
-  ck_curl # Online check is rerun only once, if the first check fails.
-fi        #   In case you're using wifi, and the cron job runs before \
-#   it authenticates
-if ! [ $wttr_net ]; then
-  echo "Weather Offline" >/tmp/wttr
+# This is what shows when the internet is down.
+# You can paste a Nerd Font icon here (e.g.,  , 睊 , or  )
+OFFLINE_ICON="⚠️" 
+
+# --- Execution ---
+
+# 1. Try to fetch weather
+if curl -sf --max-time 10 "wttr.in/$LOCATION?u&format=%m+%C,+H:%h,+A:%t,+F:%f,+W:%w\n" > "$TEMP_FILE"; then
+    mv "$TEMP_FILE" "$OUT_FILE"
+
+else
+    # 2. If it failed, wait 2 seconds and try one last time
+    sleep 2
+    if curl -sf --max-time 10 "wttr.in/$LOCATION?u&format=%m+%C,+H:%h,+A:%t,+F:%f,+W:%w\n" > "$TEMP_FILE"; then
+        mv "$TEMP_FILE" "$OUT_FILE"
+    else
+        # 3. If it still fails, print the icon
+        echo "$OFFLINE_ICON" > "$TEMP_FILE"
+        mv "$TEMP_FILE" "$OUT_FILE"
+    fi
 fi
-
