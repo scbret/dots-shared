@@ -17,7 +17,7 @@ if curl -sf --max-time 10 "wttr.in/$LOCATION?u&format=%m+%C,+H:%h,+A:%t,+F:%f,+W
 
 else
     # 2. If it failed, wait 2 seconds and try one last time
-    sleep 2
+    sleep 3
     if curl -sf --max-time 10 "wttr.in/$LOCATION?u&format=%m+%C,+H:%h,+A:%t,+F:%f,+W:%w\n" > "$TEMP_FILE"; then
         mv "$TEMP_FILE" "$OUT_FILE"
     else
