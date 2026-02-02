@@ -40,6 +40,14 @@ end
 require("core.options")
 require("core.mappings")
 
+-- === INSERT THIS BLOCK HERE ===
+-- Fix for Kitty/Hyprland resize error:
+-- Stop Neovim from trying to save/restore window size, 
+-- effectively yielding control back to Hyprland.
+vim.opt.sessionoptions:remove("resize")
+vim.opt.sessionoptions:remove("winpos")
+-- ==============================
+
 -- Bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
