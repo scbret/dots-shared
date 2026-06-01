@@ -7,8 +7,8 @@ fi
 
 # Get monitor status
 # We grep for " connected" to ensure we don't match "disconnected" lines
-DP18_CONNECTED=$(xrandr | grep "DP-1-1 connected")
-DP11_CONNECTED=$(xrandr | grep "DP-1-2 connected")
+DP18_CONNECTED=$(xrandr | grep "DP-1-8 connected")
+DP11_CONNECTED=$(xrandr | grep "DP-1-1 connected")
 
 # Get Lid Status
 # Returns "closed" or "open". The wildcard * handles different ACPI paths.
@@ -29,8 +29,8 @@ if [ -n "$DP18_CONNECTED" ] && [ -n "$DP11_CONNECTED" ]; then
         # ---------------------------------------------------------
         xrandr --output eDP-1 --off \
                --output DP-2 --off \
-               --output DP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal \
-               --output DP-1-2 --primary --mode 1920x1080 --pos 0x1080 --rotate normal \
+               --output DP-1-8 --mode 1920x1080 --pos 0x0 --rotate normal \
+               --output DP-1-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal \
                --dpi 96
     else
         # ---------------------------------------------------------
@@ -41,8 +41,8 @@ if [ -n "$DP18_CONNECTED" ] && [ -n "$DP11_CONNECTED" ]; then
         # ---------------------------------------------------------
         xrandr --output eDP-1 --primary --mode 2048x1152 --pos 0x504 --rotate normal \
                --output DP-2 --off \
-               --output DP-1-1 --mode 1920x1080 --pos 2048x0 --rotate normal \
-               --output DP-1-2 --mode 1920x1080 --pos 2048x1080 --rotate normal \
+               --output DP-1-8 --mode 1920x1080 --pos 2048x0 --rotate normal \
+               --output DP-1-1 --mode 1920x1080 --pos 2048x1080 --rotate normal \
                --dpi 96
     fi
 
