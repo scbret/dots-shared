@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-uptime -p | sed 's/^up //'
