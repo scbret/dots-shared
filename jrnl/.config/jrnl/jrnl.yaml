@@ -16,4 +16,4 @@ linewrap: 79
 tagsymbols: '@'
 template: false
 timeformat: '%Y-%m-%d %H:%M'
-version: v2.0.1
+version: '4.6'
