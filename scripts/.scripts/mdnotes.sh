@@ -11,8 +11,12 @@ open_note() {
 }
 
 new_note() {
-  printf "Enter a name (no extension; e.g. idea or jeep/oil-change): " 1>&2
-  IFS= read -r name || name=""
+  # Optional $1 is the name; without it, prompt for one.
+  name="${1:-}"
+  if [ -z "$name" ]; then
+    printf "Enter a name (no extension; e.g. idea or jeep/oil-change): " 1>&2
+    IFS= read -r name || name=""
+  fi
   [ -z "${name:-}" ] && return 0
   case "$name" in
   */*) dir="$folder" ;; # subfolder given: relative to the zk-notes root
@@ -40,13 +44,21 @@ choose_and_open() {
     files="$(list_files || true)"
 
     if command -v fzf >/dev/null 2>&1; then
-      choice=$( (
+      # --print-query: line 1 is what was typed, line 2 the selected entry.
+      # Typing a name that matches nothing and pressing Enter gives only line 1,
+      # which creates a new note with that name. Esc gives nothing and quits.
+      out=$( (
         printf '%s\n' "New"
         printf '%s\n' "$files"
       ) |
-        fzf --prompt="Choose note or create new: " --height=55% --reverse --tac || true)
+        fzf --print-query --prompt="Choose note or type a new name: " --height=55% --reverse --tac || true)
+      query=$(printf '%s\n' "$out" | sed -n 1p)
+      choice=$(printf '%s\n' "$out" | sed -n 2p)
       case "${choice:-}" in
-      "") break ;;
+      "")
+        [ -z "$query" ] && break
+        new_note "$query"
+        ;;
       "New") new_note ;;
       *".md") open_note "$folder/$choice" ;;
       esac
