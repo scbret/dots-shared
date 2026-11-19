@@ -2,27 +2,35 @@
 set -eu
 
 #folder="$HOME/repos/linux/mdnotes" # no trailing slash
-folder="$HOME/repos/zk-notes/notes" # no trailing slash
-mkdir -p "$folder"
+folder="$HOME/repos/zk-notes" # no trailing slash; notes are listed from all subfolders
+newdir="$folder/notes"         # where new notes go unless a subfolder is given
+mkdir -p "$newdir"
 
 open_note() {
   nvim -- "$1"
 }
 
 new_note() {
-  printf "Enter a name (no extension): " 1>&2
+  printf "Enter a name (no extension; e.g. idea or jeep/oil-change): " 1>&2
   IFS= read -r name || name=""
   [ -z "${name:-}" ] && return 0
   case "$name" in
-  *.md) note="$folder/$name" ;;
-  *) note="$folder/$name.md" ;;
+  */*) dir="$folder" ;; # subfolder given: relative to the zk-notes root
+  *) dir="$newdir" ;;
   esac
+  case "$name" in
+  *.md) note="$dir/$name" ;;
+  *) note="$dir/$name.md" ;;
+  esac
+  mkdir -p "$(dirname "$note")"
   open_note "$note"
 }
 
 list_files() {
-  # Newest first, filenames only; safe with spaces
-  find "$folder" -maxdepth 1 -type f -name '*.md' -printf '%T@ %f\n' |
+  # Newest first, paths relative to $folder (e.g. jeep/foo.md); safe with spaces.
+  # Skips .git and .zk (zk's config and templates).
+  find "$folder" \( -name .git -o -name .zk \) -prune -o \
+    -type f -name '*.md' -printf '%T@ %P\n' |
     sort -nr |
     awk '{ $1=""; sub(/^ /,""); print }'
 }
